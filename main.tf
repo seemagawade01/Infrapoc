@@ -7,6 +7,7 @@ locals {
  
 
 provider "google" {
+  credentials = file("serviceaccount.json")
 
   project = local.project_id
 
