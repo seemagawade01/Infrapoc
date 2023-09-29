@@ -41,7 +41,7 @@ pipeline {
   }
   post {
     always {
-     # sh 'rm -rf creds'
+    
       archiveArtifacts artifacts: 'tfplan.txt'
     }
   }
