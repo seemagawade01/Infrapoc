@@ -3,7 +3,7 @@ pipeline {
   environment {
     GCLOUD_PATH = "/usr/lib64/google-cloud-sdk/bin"
     PATH = "$PATH:$GCLOUD_PATH"
-   # GCLOUD_SVC_ACCOUNT_KEY = credentials('terraform-auth')
+  
     GCLOUD_SVC_ACCOUNT_KEYFILE = sh(script: 'unset CURL_CA_BUNDLE; /usr/lib64/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ./serviceaccount.json; unset CURL_CA_BUNDLE; /usr/lib64/google-cloud-sdk/bin/gcloud auth print-access-token', returnStdout: true).trim()
     GOOGLE_APPLICATION_CREDENTIALS = "./serviceaccount.json"
   }
