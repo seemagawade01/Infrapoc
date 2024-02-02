@@ -21,7 +21,6 @@ resource "google_compute_instance" "vm_instance" {
       image = var.cis-rhel-8-lvl-1
     }
 }
-
   network_interface {
     network = "default"
 } 
